@@ -2,7 +2,6 @@ package com.example.demoiss;
 
 import com.example.demoiss.model.Carte;
 import com.example.demoiss.model.Client;
-import com.example.demoiss.repository.*;
 import com.example.demoiss.service.Service;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -21,7 +20,7 @@ import java.util.stream.Collectors;
 
 import static java.util.stream.StreamSupport.stream;
 
-public class ClientReturnController {
+public class BibliotecarController {
     private Service service;
     @FXML
     private TextField usernameTF;
@@ -30,7 +29,7 @@ public class ClientReturnController {
     private TextField parolaTF;
 
     @FXML
-    private Button logIn;
+    private Button button;
 
     @FXML
     TableColumn<Carte,Integer> id;
@@ -53,12 +52,7 @@ public class ClientReturnController {
 
     private final ObservableList<Carte> model = FXCollections.observableArrayList();
 
-    public void setClass(Client client, Service service) {
-        this.client = client;
-        this.service = service;
-        initializeazaTabel();
-        tabel.setItems(model);
-    }
+
     public void initialize() {
         Properties props=new Properties();
         try {
@@ -77,15 +71,20 @@ public class ClientReturnController {
         autor.setCellValueFactory(new PropertyValueFactory<>("autor"));
         tip.setCellValueFactory(new PropertyValueFactory<>("tip"));
 
-        //initModel();
-        //tabel.setItems(model);
     }
-    private void initializeazaTabel() {
+    private void initializareTabel() {
 
-        Iterable<Carte> entity = service.getCartiInchiriate(client.getCnp());
+
+        Iterable<Carte> entity = service.getCartiInchiriateBibliotecar();
         List<Carte> pac = stream(entity.spliterator(), false).collect(Collectors.toList());
         model.setAll(pac);
+
     }
 
-
+    public void setClass(Service service) {
+        this.client = client;
+        this.service = service;
+        initializareTabel();
+        tabel.setItems(model);
+    }
 }

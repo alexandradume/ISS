@@ -8,15 +8,15 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="270.0" style="-fx-background-color: #b3cce6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="270.0" prefWidth="270.0" style="-fx-background-color: #b3cce6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoiss.MainController">
    <children>
       <Label layoutX="72.0" layoutY="25.0" prefHeight="24.0" prefWidth="148.0" text="LIBRARY">
          <font>
             <Font name="Mistral" size="19.0" />
          </font>
       </Label>
-      <TextField layoutX="39.0" layoutY="98.0" prefHeight="25.0" prefWidth="191.0" />
-      <TextField layoutX="39.0" layoutY="145.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="usernameTF" layoutX="39.0" layoutY="98.0" prefHeight="25.0" prefWidth="191.0" />
+      <TextField fx:id="parolaTF" layoutX="39.0" layoutY="145.0" prefHeight="25.0" prefWidth="191.0" />
 
       <Label layoutX="40.0" layoutY="76.0" prefHeight="20.0" prefWidth="85.0" text="Username">
          <font>
@@ -33,7 +33,7 @@
             <Image url="@img.png" />
          </image>
       </ImageView>
-      <Button layoutX="92.0" layoutY="194.0" mnemonicParsing="false" onAction="#logIn" prefHeight="33.0" prefWidth="85.0" text="Autentificare">
+      <Button fx:id="logIn" layoutX="92.0" layoutY="194.0" mnemonicParsing="false" onAction="#logIn" prefHeight="33.0" prefWidth="85.0" text="Autentificare">
          <font>
             <Font name="Pristina" size="14.0" />
          </font></Button>

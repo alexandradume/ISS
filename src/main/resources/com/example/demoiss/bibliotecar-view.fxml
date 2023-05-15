@@ -7,19 +7,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="180.0" prefWidth="534.0" style="-fx-background-color: #b3cce6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoiss.ClientController">
+<AnchorPane prefHeight="180.0" prefWidth="534.0" style="-fx-background-color: #b3cce6;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demoiss.BibliotecarController">
    <children>
       <Label layoutX="14.0" layoutY="14.0" prefHeight="15.0" prefWidth="53.0" text="HOME">
          <font>
             <Font name="Mistral" size="16.0" />
          </font>
       </Label>
-      <TableView layoutX="26.0" layoutY="56.0" prefHeight="118.0" prefWidth="482.0">
+      <TableView fx:id="tabel" layoutX="26.0" layoutY="56.0" prefHeight="118.0" prefWidth="482.0">
          <columns>
-            <TableColumn prefWidth="75.0" text="id" />
-            <TableColumn prefWidth="75.0" text="titlu" />
-            <TableColumn prefWidth="75.0" text="autor" />
-            <TableColumn prefWidth="75.0" text="tip" />
+            <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+            <TableColumn fx:id="titlu" prefWidth="75.0" text="titlu" />
+            <TableColumn fx:id="autor" prefWidth="75.0" text="autor" />
+            <TableColumn fx:id="tip" prefWidth="75.0" text="tip" />
          </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
