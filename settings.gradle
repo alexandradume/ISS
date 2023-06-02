@@ -1,0 +1,8 @@
+rootProject.name = "Offfff"
+include 'Model'
+include 'Persistence'
+include 'Networking'
+include 'Services'
+include 'Clientt'
+include 'Server'
+
